@@ -19,7 +19,7 @@ class DjangoModelObjectsMock:
         self.djangoManger_get_patcher.stop()
         self.djangoManger_filter_patcher.stop()
         
-    def call(self, *args, **kwargs):
+    def when_called_with(self, *args, **kwargs):
         kall = call(*args, **kwargs)
         self.presetValueForCalls.append(kall)
         return kall
